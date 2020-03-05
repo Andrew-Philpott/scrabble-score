@@ -23,7 +23,7 @@
   - Input: "hi4"
   - Output: 0
 
-- _Spec: A string containing multiple words is not valid and returns an error._
+- _Spec: A string containing multiple words is not valid option and returns an error._
 
   - Input: "Multiple Words"
   - Output: "Input is invalid! Please enter a single word only."
