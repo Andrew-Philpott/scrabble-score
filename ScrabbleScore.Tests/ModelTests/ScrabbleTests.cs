@@ -10,7 +10,7 @@ namespace ScrabbleScore.Tests
     [TestMethod]
     public void ScrabbleConstructor_CreatesInstanceScrabble_Scrabble()
     {
-      string word = "Hello";
+      string word = "hello";
       Scrabble newWord = new Scrabble("Hello");
       Assert.AreEqual(typeof(Scrabble), newWord.GetType());
       Assert.AreEqual(word, newWord.Word);
@@ -29,6 +29,21 @@ namespace ScrabbleScore.Tests
     {
       Scrabble newWord = new Scrabble("H3llo");
       bool result = newWord.WordContainsNonLetterCharacters();
+      Assert.AreEqual(true, result);
+    }
+
+    [TestMethod]
+    public void CalculateWordScore_Calculates_True()
+    {
+      Scrabble newWord = new Scrabble("H3llo");
+      bool result = newWord.WordContainsNonLetterCharacters();
+      Assert.AreEqual(true, result);
+    }
+    [TestMethod]
+    public void IsWordEmptyString_ReturnTrueIfTheWordStringDoesntContainAnyLetters_True()
+    {
+      Scrabble newWord = new Scrabble("Hello");
+      bool result = newWord.IsWordEmptyString();
       Assert.AreEqual(true, result);
     }
   }

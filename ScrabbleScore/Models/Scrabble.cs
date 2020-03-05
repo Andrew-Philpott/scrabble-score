@@ -1,4 +1,5 @@
 using System;
+using System.Text.RegularExpressions;
 
 namespace ScrabbleScore.Models
 {
@@ -7,7 +8,7 @@ namespace ScrabbleScore.Models
     public string Word { get; }
     public Scrabble(string word)
     {
-      Word = word;
+      Word = word.ToLower();
     }
 
     public bool CheckIfMultipleWords()
@@ -21,6 +22,16 @@ namespace ScrabbleScore.Models
     }
 
     public bool WordContainsNonLetterCharacters()
+    {
+      Regex r = new Regex("^[a-z]*$");
+      if (r.IsMatch(Word))
+      {
+        return false;
+      }
+      return true;
+    }
+
+    public bool IsWordEmptyString()
     {
       return false;
     }
