@@ -15,5 +15,14 @@ namespace ScrabbleScore.Tests
       Assert.AreEqual(typeof(Scrabble), newWord.GetType());
       Assert.AreEqual(word, newWord.Word);
     }
+
+    [TestMethod]
+    public void CheckIfMultipleWords_ChecksStringForMultipleWordsReturnsTrueIfMoreThanOneWord_True()
+    {
+      Scrabble newWord = new Scrabble("Hello hi");
+      bool result = newWord.CheckIfMultipleWords();
+      Assert.AreEqual(true, result);
+    }
+
   }
 }
