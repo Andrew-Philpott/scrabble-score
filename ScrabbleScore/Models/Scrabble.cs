@@ -12,11 +12,11 @@ namespace ScrabbleScore.Models
 
     public bool CheckIfMultipleWords()
     {
-      // string[] splitWord = word.Split(" ", StringSplitOptions.RemoveEmptyEntries);
-      // if (splitWord.Length > 1)
-      // {
-      //   return true;
-      // }
+      string[] splitWord = Word.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+      if (splitWord.Length > 1)
+      {
+        return true;
+      }
       return false;
     }
   }
