@@ -21,19 +21,28 @@ namespace ScrabbleScore.Models
       return false;
     }
 
-    public bool WordContainsNonLetterCharacters()
+    public bool WordContainsOnlyLetterCharacters()
     {
       Regex r = new Regex("^[a-z]*$");
       if (r.IsMatch(Word))
       {
-        return false;
+        return true;
       }
-      return true;
+      return false;
     }
 
     public bool IsWordEmptyString()
     {
       if (Word == "")
+      {
+        return true;
+      }
+      return false;
+    }
+
+    public bool CheckIfNonLettersOrEmpty()
+    {
+      if (IsWordEmptyString() || !WordContainsOnlyLetterCharacters())
       {
         return true;
       }
@@ -53,12 +62,52 @@ namespace ScrabbleScore.Models
       MatchCollection matches = twoPoint.Matches(Word);
       return matches.Count * 2;
     }
-
     public int CalculateThreePointLetters()
     {
       Regex threePoint = new Regex("[bcmp]");
       MatchCollection matches = threePoint.Matches(Word);
       return matches.Count * 3;
+    }
+
+    public int CalculateFourPointLetters()
+    {
+      Regex fourPoint = new Regex("[fhvwy]");
+      MatchCollection matches = fourPoint.Matches(Word);
+      return matches.Count * 4;
+    }
+
+    public int CalculateFivePointLetters()
+    {
+      Regex fivePoint = new Regex("[k]");
+      MatchCollection matches = fivePoint.Matches(Word);
+      return matches.Count * 5;
+    }
+
+    public int CalculateEightPointLetters()
+    {
+      Regex eightPoint = new Regex("[j]");
+      MatchCollection matches = eightPoint.Matches(Word);
+      return matches.Count * 8;
+    }
+
+    public int CalculateTenPointLetters()
+    {
+      Regex tenPoint = new Regex("[qz]");
+      MatchCollection matches = tenPoint.Matches(Word);
+      return matches.Count * 10;
+    }
+
+    public int CalculateScore()
+    {
+      int score = 0;
+      score += CalculateOnePointLetters();
+      score += CalculateTwoPointLetters();
+      score += CalculateThreePointLetters();
+      score += CalculateFourPointLetters();
+      score += CalculateFivePointLetters();
+      score += CalculateEightPointLetters();
+      score += CalculateTenPointLetters();
+      return score;
     }
   }
 }

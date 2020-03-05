@@ -1,10 +1,24 @@
-#
+# Scrabble Score
 
 #### Scrabble Score Calculator 03.05.2020\_
 
 #### By _**Andrew Philpott and Tiffany Siu**_
 
 ## Description
+
+Scrabble Score is an Epicodus application that calculates the total score of a word. Each letter is assigned a point value and the word score is the sum of all letters contained in the word. Scrabble Score only works with one word entries and cannot contain non letter characters.
+
+The points assigned to each letter are as follows:
+
+| Letters                          | Points    |
+| :------------------------------- | :-------- |
+| A, E, I, O, U, L, N, R, S, and T | 1 point   |
+| D, G                             | 2 points  |
+| B, C, M, P                       | 3 points  |
+| F, H, V, W, Y                    | 4 points  |
+| K                                | 5 points  |
+| J, X                             | 8 points  |
+| Q, Z                             | 10 points |
 
 ## Specs
 
@@ -90,6 +104,7 @@
 ## Technologies Used
 
 - C#
+- MSTest
 - .NET Core 2.2
 
 ### License
