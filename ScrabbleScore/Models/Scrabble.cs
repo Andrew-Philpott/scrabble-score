@@ -56,10 +56,9 @@ namespace ScrabbleScore.Models
 
     public int CalculateThreePointLetters()
     {
-      // Regex threePoint = new Regex("[bcmp]");
-      // MatchCollection matches = threePoint.Matches(Word);
-      // return matches.Count * 3;
-      return 0;
+      Regex threePoint = new Regex("[bcmp]");
+      MatchCollection matches = threePoint.Matches(Word);
+      return matches.Count * 3;
     }
   }
 }
