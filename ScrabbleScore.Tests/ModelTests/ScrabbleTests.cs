@@ -24,5 +24,12 @@ namespace ScrabbleScore.Tests
       Assert.AreEqual(true, result);
     }
 
+    [TestMethod]
+    public void WordContainsNonLetterCharacters_ChecksWordForNonLetterCharactersReturnTrueIfWordContainsNonLetterCharacters_True()
+    {
+      Scrabble newWord = new Scrabble("H3llo");
+      bool result = newWord.WordContainsNonLetterCharacters();
+      Assert.AreEqual(true, result);
+    }
   }
 }

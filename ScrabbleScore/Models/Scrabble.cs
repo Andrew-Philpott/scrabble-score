@@ -19,5 +19,10 @@ namespace ScrabbleScore.Models
       }
       return false;
     }
+
+    public bool WordContainsNonLetterCharacters()
+    {
+      return false;
+    }
   }
 }
