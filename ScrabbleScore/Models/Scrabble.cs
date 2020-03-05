@@ -3,6 +3,14 @@ using System.Text.RegularExpressions;
 
 namespace ScrabbleScore.Models
 {
+  public class IntWrapper
+  {
+    public int value = 0;
+    public IntWrapper()
+    {
+
+    }
+  }
   public class Scrabble
   {
     public string Word { get; }
@@ -33,7 +41,18 @@ namespace ScrabbleScore.Models
 
     public bool IsWordEmptyString()
     {
+      if (Word == "")
+      {
+        return true;
+      }
       return false;
+    }
+
+    public int CalculateOnePointLetters()
+    {
+      Regex onePoint = new Regex("[aeioulnrst]");
+      MatchCollection matches = onePoint.Matches(Word);
+      return matches.Count;
     }
   }
 }

@@ -42,9 +42,25 @@ namespace ScrabbleScore.Tests
     [TestMethod]
     public void IsWordEmptyString_ReturnTrueIfTheWordStringDoesntContainAnyLetters_True()
     {
-      Scrabble newWord = new Scrabble("Hello");
+      Scrabble newWord = new Scrabble("");
       bool result = newWord.IsWordEmptyString();
       Assert.AreEqual(true, result);
+    }
+
+    [TestMethod]
+    public void CalculateOnePointLetters_ReturnZeroIfNoLettersMatch_0()
+    {
+      Scrabble newWord = new Scrabble("bcdfghj");
+      int result = newWord.CalculateOnePointLetters();
+      Assert.AreEqual(0, result);
+    }
+
+    [TestMethod]
+    public void CalculateOnePointLetters_ReturnScoreIfSomeLettersMatch_4()
+    {
+      Scrabble newWord = new Scrabble("hello");
+      int result = newWord.CalculateOnePointLetters();
+      Assert.AreEqual(4, result);
     }
   }
 }
