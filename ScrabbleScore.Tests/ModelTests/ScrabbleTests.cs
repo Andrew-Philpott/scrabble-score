@@ -78,5 +78,21 @@ namespace ScrabbleScore.Tests
       int result = newWord.CalculateTwoPointLetters();
       Assert.AreEqual(4, result);
     }
+
+    [TestMethod]
+    public void CalculateThreePointLetters_ReturnZeroIfNoLettersMatch_0()
+    {
+      Scrabble newWord = new Scrabble("adefglnoq");
+      int result = newWord.CalculateThreePointLetters();
+      Assert.AreEqual(0, result);
+    }
+
+    [TestMethod]
+    public void CalculateThreePointLetters_ReturnScoreIfSomeLettersMatch_9()
+    {
+      Scrabble newWord = new Scrabble("bump");
+      int result = newWord.CalculateThreePointLetters();
+      Assert.AreEqual(9, result);
+    }
   }
 }

@@ -49,11 +49,17 @@ namespace ScrabbleScore.Models
 
     public int CalculateTwoPointLetters()
     {
-      Regex onePoint = new Regex("[dg]");
-      MatchCollection matches = onePoint.Matches(Word);
+      Regex twoPoint = new Regex("[dg]");
+      MatchCollection matches = twoPoint.Matches(Word);
       return matches.Count * 2;
     }
 
-
+    public int CalculateThreePointLetters()
+    {
+      // Regex threePoint = new Regex("[bcmp]");
+      // MatchCollection matches = threePoint.Matches(Word);
+      // return matches.Count * 3;
+      return 0;
+    }
   }
 }
