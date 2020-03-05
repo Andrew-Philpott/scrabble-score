@@ -3,14 +3,6 @@ using System.Text.RegularExpressions;
 
 namespace ScrabbleScore.Models
 {
-  public class IntWrapper
-  {
-    public int value = 0;
-    public IntWrapper()
-    {
-
-    }
-  }
   public class Scrabble
   {
     public string Word { get; }
