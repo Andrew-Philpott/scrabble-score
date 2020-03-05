@@ -46,5 +46,12 @@ namespace ScrabbleScore.Models
       MatchCollection matches = onePoint.Matches(Word);
       return matches.Count;
     }
+
+    public int CalculateTwoPointLetters()
+    {
+      Regex onePoint = new Regex("[dg]");
+      MatchCollection matches = onePoint.Matches(Word);
+      return matches.Count * 2;
+    }
   }
 }

@@ -62,5 +62,21 @@ namespace ScrabbleScore.Tests
       int result = newWord.CalculateOnePointLetters();
       Assert.AreEqual(4, result);
     }
+
+    [TestMethod]
+    public void CalculateTwoPointLetters_ReturnZeroIfNoLettersMatch_0()
+    {
+      Scrabble newWord = new Scrabble("abcefh");
+      int result = newWord.CalculateTwoPointLetters();
+      Assert.AreEqual(0, result);
+    }
+
+    [TestMethod]
+    public void CalculateTwoPointLetters_ReturnScoreIfSomeLettersMatch_4()
+    {
+      Scrabble newWord = new Scrabble("good");
+      int result = newWord.CalculateTwoPointLetters();
+      Assert.AreEqual(4, result);
+    }
   }
 }
