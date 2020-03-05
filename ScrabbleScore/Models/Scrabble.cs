@@ -53,5 +53,7 @@ namespace ScrabbleScore.Models
       MatchCollection matches = onePoint.Matches(Word);
       return matches.Count * 2;
     }
+
+
   }
 }
